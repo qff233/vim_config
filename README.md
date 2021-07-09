@@ -1,2 +1,8 @@
-# vim_config
-As the title describe
+# 当前快捷键
+1. F2打开对应函数的man文档
+2. F3生成ctags
+3. F11打开文件目录
+4. F12查看所有函数
+5. ctrl+\ 打开新的tab并跳转到对应函数的定义
+6. 正常模式下1 2 3 4 5 6 7 8 9数字对应不同tab
+7. Shift+Q 快速保存退出
