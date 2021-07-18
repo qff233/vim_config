@@ -1,3 +1,4 @@
+
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -9,12 +10,19 @@ call plug#begin('~/.vim/plugged')
 	Plug 'majutsushi/tagbar'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 	Plug 'https://github.com/bling/vim-airline.git'
+	Plug 'itchyny/lightline.vim'
+	Plug 'powerline/powerline'
+	Plug 'vim-scripts/a.vim'
+	Plug 'vim-scripts/TagHighlight'
+	Plug 'crusoexia/vim-monokai'
+	Plug 'justinmk/vim-syntax-extra'
+	Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 set t_Co=256
 "let g:solarized_termcolors=16
 
-colorscheme	desert	
+colorscheme	desert
 set background=dark
 
 syntax on	  "语法高亮 
@@ -33,7 +41,7 @@ set autoindent		"自动缩进
 
 
 let g:NERDTreeWinSize = 20
-let g:tagbar_width=20
+let g:tagbar_width=45
 
 let g:AutoComplPop_IgnoreCaseOption=1
 
@@ -43,8 +51,8 @@ let g:acp_behaviorKeywordCommand="\<C-n>"
 map <F2> <S-K><CR>
 map! <F2> <C-O><S-K><CR>
 
-map <F3> :! ctags -R<CR>
-map! <F3> <Esc>:! ctags -R<CR>
+map <F3> :! ctags -R<CR> :UpdateTypesFile<CR>
+map! <F3> <Esc>:! ctags -R<CR> :UpdateTypesFile<CR>
 
 map <F11> :NERDTreeToggle<CR>
 map! <F11> <Esc>:NERDTreeToggle<CR>
